@@ -18,33 +18,35 @@ public class ArrayCreationLab {
         scanner.nextLine();
         return value;
     }
+
+
     public static void main(String[] args) {
         int[] scores;
         scores = new int[5];
         System.out.println(scores.length);
 
         String[] colors = {"Red", "Green", "Blue"};
-        for (String color : colors) {
-            System.out.println(color);
+        for (String color : colors) { // Enhanced for loop
+            System.out.println(color); // Print color in colors
         }
 
-        double[] prices = new double[3];
+        double[] prices = new double[3]; // Creating double array + initiating
         prices[0] = 9.99;
         prices[1] = 14.50;
         prices[2] = 20.00;
-        for (double price : prices) {
-            System.out.print(price +  " ");
+        for (double price : prices) { // Another enhanced for loop
+            System.out.print(price +  " "); // Seperating elements with a space
         }
 
-        int num_of_foods = getIntInput("\nHow many favorite foods?: ");
-        String[] foods = new String[num_of_foods];
-        String food_sentence = "Your favorite foods are: " ;
-        for (int i = 0; i < num_of_foods; i++) {
-            int food_number = i + 1;
-            String food_input = getInput("Enter food " + (food_number) + ": ");
-            foods[i] = food_input;
+        int num_of_foods = getIntInput("\nHow many favorite foods?: "); // # of foods in array
+        String[] foods = new String[num_of_foods]; // Initiallizing array w/ number of foods
+        String food_sentence = "Your favorite foods are: " ; // Creating a string to add to for later
+        for (int i = 0; i < num_of_foods; i++) { // For loop to fill the array with foods
+            int food_number = i + 1; // Keeps track of which # food for the enter statement below (just the index + 1)
+            String food_input = getInput("Enter food " + (food_number) + ": "); // Get food input
+            foods[i] = food_input; // fill string array.
         }
-        for (String food : foods) {
+        for (String food : foods) { // Loop to print the sentence whilst adding appropriate punctuation if the element is the final in the array.
             String punctuation = ", ";
             if (foods[num_of_foods - 1].equals(food)) {
                 punctuation = ".";
